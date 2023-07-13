@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreateUser({ userName, email, onChange, onCreate }){
+function CreateUser({userName, email, onChange, onCreate}){
     return (
       <div>
           <input
