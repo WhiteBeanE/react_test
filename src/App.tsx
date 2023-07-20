@@ -1,6 +1,6 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React, {ChangeEvent, useRef, useState, useEffect} from 'react';
 import logo from './logo.svg';
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import './App.css';
 import Hello from "./javaScript/Hello";
 import Wrapper from "./javaScript/Wrapper";
@@ -13,13 +13,32 @@ import MyPage from "./javaScript/page/MyPage";
 import Login from "./javaScript/page/Login";
 
 export default function App(){
+    useEffect(() => {
+        console.log('change');
+        console.log(new Date(new Date().getTime()));
+    })
     return (
       <div className="App">
           <BrowserRouter>
+              <header>
+                  <Link to="/">
+                      <button>Main</button>
+                  </Link>
+                  <Link to="/mypage">
+                      <button>MyPage</button>
+                  </Link>
+                  <Link to="/login">
+                      <button>Login</button>
+                  </Link>
+                  <Link to="/count">
+                      <button>useEffect</button>
+                  </Link>
+              </header>
               <Routes>
-                  <Route path={"/"} element={<Main/>}/>
-                  <Route path={"/mypage"} element={<MyPage/>}/>
-                  <Route path={"/login"} element={<Login/>}/>
+                  <Route path="/" Component={Main}/>
+                  <Route path="/mypage" Component={MyPage}/>
+                  <Route path="/login" Component={Login}/>
+                  <Route path="/count" Component={Counter}/>
               </Routes>
           </BrowserRouter>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 
 function Counter(){
 
@@ -15,7 +15,10 @@ function Counter(){
         setNumber(number - 1);
         console.log(number);
     }
-
+    useEffect(() => {
+        console.log('number : ' + number);
+        // console.log("asdasdas");
+    })
     return(
         <div>
             <h1>{number}</h1>
