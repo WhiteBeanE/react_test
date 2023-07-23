@@ -6,6 +6,7 @@ import Main from "./javaScript/page/Main";
 import MyPage from "./javaScript/page/MyPage";
 import Login from "./javaScript/page/Login";
 import Auth from "./javaScript/Auth";
+import WaitList from "./javaScript/page/WaitList";
 export default function App(){
     return (
       <div className="App">
@@ -23,12 +24,16 @@ export default function App(){
                   <Link to="/count">
                       <button>useEffect</button>
                   </Link>
+                  <Link to="/wait-list">
+                      <button>waitList</button>
+                  </Link>
               </header>
               <Routes>
                   <Route path="/" Component={Auth(Main, null)}/>
                   <Route path="/mypage" Component={Auth(MyPage, true)}/>
                   <Route path="/login" Component={Auth(Login, false)}/>
                   <Route path="/count" Component={Auth(Counter, null)}/>
+                  <Route path="/wait-list" Component={Auth(WaitList, true)}/>
               </Routes>
           </BrowserRouter>
       </div>
