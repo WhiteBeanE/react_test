@@ -7,10 +7,10 @@ import MyPage from "./javaScript/page/MyPage";
 import Login from "./javaScript/page/Login";
 import Auth from "./javaScript/Auth";
 import WaitList from "./javaScript/page/WaitList";
+
 export default function App(){
     return (
       <div className="App">
-          <BrowserRouter>
               <header>
                   <Link to="/">
                       <button>Main</button>
@@ -34,8 +34,8 @@ export default function App(){
                   <Route path="/login" Component={Auth(Login, false)}/>
                   <Route path="/count" Component={Auth(Counter, null)}/>
                   <Route path="/wait-list" Component={Auth(WaitList, true)}/>
+                  <Route path="/dt" Component={Auth(WaitList, true)}/>
               </Routes>
-          </BrowserRouter>
       </div>
     );
 }

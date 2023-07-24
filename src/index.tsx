@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(
     // HTML 문서 내에서 id가 'root'인 요소를 찾아서 해당 요소에 React 애플리케이션을 렌더링
@@ -13,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
     // 이거 주석 처리 안하면 useEffect 한 번만 실행되어야 하는 것 들이 두번 실행됨
     <React.StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </React.StrictMode>
 );
 
