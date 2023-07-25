@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Cookies from 'js-cookie';
-
+import SockJS from 'sockjs-client';
+import { Client } from '@stomp/stompjs';
 export default function(){
     const [waitList, setWaitList] = useState([]);
     const loadWaitList = async () => {
@@ -21,10 +22,27 @@ export default function(){
         }
     }
     useEffect(() => {
+
         async function fetchData() {
             await loadWaitList(); // You can await here if needed
         }
         fetchData();
+        // const url = 'http://localhost:8585/wait-ws';
+        // const client = new Client({
+        //     brokerURL: url,
+        //     connectHeaders: {
+        //         Authorization: Cookies.get("jwt")
+        //     },
+        //     webSocketFactory: () => new SockJS(url),
+        // });
+        // client.onconnect = () => {
+        //     console.log('connect');
+        // };
+        // client.onStompError = (frame) => {
+        //     console.error('Broker reported error: ' + frame.headers['message']);
+        // };
+        //
+        // client.activate();
     }, []);
 
     return (
