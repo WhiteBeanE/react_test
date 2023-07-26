@@ -27,22 +27,6 @@ export default function(){
             await loadWaitList(); // You can await here if needed
         }
         fetchData();
-        // const url = 'http://localhost:8585/wait-ws';
-        // const client = new Client({
-        //     brokerURL: url,
-        //     connectHeaders: {
-        //         Authorization: Cookies.get("jwt")
-        //     },
-        //     webSocketFactory: () => new SockJS(url),
-        // });
-        // client.onconnect = () => {
-        //     console.log('connect');
-        // };
-        // client.onStompError = (frame) => {
-        //     console.error('Broker reported error: ' + frame.headers['message']);
-        // };
-        //
-        // client.activate();
     }, []);
 
     return (
