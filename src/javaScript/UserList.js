@@ -33,12 +33,6 @@ function UserList({users, onRemove, onToggle}) {
                 )}
                 <br/>
             </div>
-            {/*<div>*/}
-            {/*    {users.map((user, index) =>*/}
-            {/*        // 고유한 값이 없다면 map() 함수를 사용 할 때 설정하는 콜백함수의 두번째 파라미터 index 를 key 로 사용*/}
-            {/*        <User user={user} key={index} />*/}
-            {/*    )}*/}
-            {/*    <br/>*/}
         </div>
     );
 }

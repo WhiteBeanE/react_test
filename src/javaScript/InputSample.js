@@ -1,7 +1,6 @@
 import React, {useState, useRef} from "react";
 
 function InputSample(index){
-    // const [text, setText] = useState('');
     const [inputs, setInputs] = useState({name : '', nickName : ''});
     const {name, nickName} = inputs;
     const nameInput = useRef();
@@ -13,9 +12,6 @@ function InputSample(index){
             [name] : value}
         );
         console.log(e);
-       /* console.log(e);
-        console.log(e.target.value);
-        setText(e.target.value);*/
     };
     const onReset = () => {
         setInputs({
@@ -23,7 +19,6 @@ function InputSample(index){
             nickName: ''
         });
         nameInput.current.focus();
-      /*setText('');*/
     };
     return (
       <div>

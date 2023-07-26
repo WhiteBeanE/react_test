@@ -24,22 +24,6 @@ export default function(SpecificComponent, option, authorization = null){
     function AuthenticationCheck(props) {
         useEffect(() => {
             console.log('Component has rendered');
-            // const checkJwt = async () => {
-            //     const isJwtValid = await jwtCheck() === 200 ? true : false;
-            //     console.log(isJwtValid);
-            //     if (!isJwtValid) {
-            //         if (option) {
-            //             //alert('로그인 안했는데 인증페이지?');
-            //             navigate("/login");
-            //         }
-            //     }else{
-            //
-            //     }
-            //     if (authorization !== null){
-            //
-            //     }
-            // };
-            // checkJwt();
         }, []);
         useLayoutEffect(() => {
             const checkJwt = async () => {
@@ -48,7 +32,6 @@ export default function(SpecificComponent, option, authorization = null){
                 console.log(isJwtValid);
                 if (!isJwtValid) {
                     if (option) {
-                        //alert('로그인 안했는데 인증페이지?');
                         navigate("/login");
                     }
                 }
